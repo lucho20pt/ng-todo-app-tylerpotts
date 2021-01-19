@@ -1,0 +1,103 @@
+// vars
+$bg1: black;
+$bg2: #eeeeee;
+$bg_even: rgba(173, 216, 230, 0.3);
+$bg_odd: rgba(224, 255, 255, 0.3);
+
+$text1: aqua;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// structure
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  background-color: $bg2;
+}
+
+body {
+  height: auto;
+}
+
+// base components
+header {
+  background-color: $bg1;
+  h1 {
+    color: $text1;
+  }
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: $bg1;
+  p {
+    color: $text1;
+  }
+}
+
+.App {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+nav{
+  a, span{
+    color: #eeeeee;
+  }
+}
+
+// components
+.todos {
+  overflow: hidden;
+
+  .todo {
+    &-item {
+      border-bottom: 1px solid $bg2;
+
+      &:nth-child(even) {
+        background-color: $bg_even;
+      }
+      &:nth-child(odd) {
+        background-color: $bg_odd;
+      }
+
+      &-completed {
+        text-decoration: line-through;
+      }
+
+      .btn {
+        border-radius: 50%;
+        background-color: rgba(255, 0, 0, 0.5);
+        font-size: 0.8rem;
+        // line-height: .9rem;
+        color: white;
+        &:hover {
+          background-color: rgba(255, 0, 0, 1);
+        }
+      }
+    }
+  }
+}
