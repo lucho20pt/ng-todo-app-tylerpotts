@@ -1,0 +1,31 @@
+<section class="todos my-4">
+
+  <h3 className="text-center">
+      <strong>{{title}}</strong>
+  </h3>
+
+  <form (submit)="addTodo()">
+    <div class="mb-3">
+      <input
+        type="text"
+        name="inputTodo"
+        class="form-control todo-item-input"
+        placeholder="Add new todo..."
+        [(ngModel)]="inputTodo" >
+        <button class="btn btn-primary mt-3">Add Todo</button>
+    </div>
+  </form>
+
+  <div class="todo-item | d-flex align-items-center | px-4 py-2"
+    *ngFor="let todo of todos; let i = index;">
+      <input type="checkbox" name="" id=""
+      (click)="toogleDone(i)">
+      <p class="m-2 mx-3">{{ i }}</p>
+      <p class="title m-2
+        {{ todo.completed ? 'todo-item-completed' : '' }}">
+        {{ todo.name }}
+      </p>
+      <button class="btn ml-auto" (click)="deleteTodo(i)">X</button>
+    </div>
+
+</section>
